@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "System sniffer",
+    "description": "A four-tab system panel (processes, performance, disks, trace) and a system_sniff tool for the model, sharing one collection layer."
+  },
+  "panel": "System"
+}

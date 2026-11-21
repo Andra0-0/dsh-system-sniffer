@@ -1,0 +1,72 @@
+{
+  "name": "@local/dsh-system-sniffer",
+  "version": "0.4.1",
+  "private": true,
+  "type": "module",
+  "description": "Tabbed system panel (processes, performance, disks, trace) and a system_sniff tool for DeepSeek Harness.",
+  "license": "MIT",
+  "author": "Andra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andra0-0/dsh-system-sniffer.git"
+  },
+  "homepage": "https://github.com/Andra0-0/dsh-system-sniffer#readme",
+  "bugs": {
+    "url": "https://github.com/Andra0-0/dsh-system-sniffer/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "system-monitor",
+    "windows",
+    "pdh",
+    "process-monitor"
+  ],
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "native",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg"
+  ],
+  "scripts": {
+    "test": "node test/run.mjs",
+    "check": "node --check index.js && node --check client.js"
+  },
+  "dependencies": {
+    "koffi": "3.3.8"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  }
+}

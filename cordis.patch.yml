@@ -1,0 +1,11 @@
+# Applied after every bundle layer. `keepWarm` only affects the `typeperf`
+# fallback groups: the native collector is always up while the preheated
+# sections (cpu / memory / network / gpu / diskio) are awake, which is what
+# `warm: true` means — see README "配置". Leaving `processes` and `volumes`
+# alone here keeps their 30 s lease: they stop sampling 30 s after the panel is
+# left, and the Host stops their samplers 5 s later.
+- insert:
+    - id: system-sniffer
+      name: '@local/dsh-system-sniffer'
+      config:
+        keepWarm: false

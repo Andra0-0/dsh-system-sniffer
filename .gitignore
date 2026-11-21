@@ -1,0 +1,11 @@
+node_modules/
+*.log
+probe-*.json
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# Unredacted screenshot originals (they show the author's installed apps and
+# CPU model). The README uses the redacted .jpg versions.
+docs/image/*.png
